@@ -1,0 +1,28 @@
+doctype
+html(lang='zh-CN').night
+    include _partial/head
+    //- != css("public/css/header")
+    body
+        include _partial/header
+        // 主题内容
+        main#index-content.section
+            - var preYear = null
+            each post in site.posts.sort('date', -1).toArray()
+                - if(!preYear || date(post.date, 'Y') < preYear)
+                    - preYear = date(post.date, 'Y')
+                    div.article.year
+                        span.year= date(post.date, 'Y')
+
+                div.article
+                    span.time= date(post.date, 'MMM D ')
+                    a(title=post.title, href='/' + post.path).title.underline= post.title
+                    each category in post.categories.toArray()
+                        - if(category.name === 'study')
+                            span.meta.category-name.study= ' ' + category.name
+                        - else if(category.name === 'work')
+                            span.meta.category-name.work= ' ' + category.name
+                        - else if(category.name === 'life')
+                            span.meta.category-name.life= ' ' + category.name
+                        - else
+                            span.meta.category-name= category.name
+    include _partial/footer

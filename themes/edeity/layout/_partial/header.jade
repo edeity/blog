@@ -1,0 +1,23 @@
+div.loading
+
+header.fullscreen
+    // 移动端的按钮
+    div.toolbar
+        i.iconfont.icon-menu
+    h1
+        a(href="/")
+            != config.title
+    - if(config.ede_theme.menu)
+        div.head-link
+            - each eachMenu in config.ede_theme.menu
+                a.btn.waves(href=url_for(eachMenu.link))
+                    span
+                        i(class="iconfont icon-" + eachMenu.ico)
+                        != eachMenu.title
+    
+// 侧边栏
+div.some-link
+    a.btn#light-or-not
+        i.iconfont.icon-light
+    a(style="display: none").btn#up-to-top
+        i.iconfont.icon-up

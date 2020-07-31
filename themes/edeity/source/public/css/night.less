@@ -1,0 +1,239 @@
+@bg: #272B34;
+@light-bg: #383C47;
+@deep-bg: #1B1E24;
+@font-color: #e1e1e1;
+@dark-blue: #3F92FB;
+
+html.night {
+    body {
+        background: @light-bg;
+    }
+
+    .underline {
+        &:before {
+            opacity: .6;
+            background: @font-color;
+        }
+    }
+
+    *::selection {
+        background: rgba(0, 0, 0, .3);
+    }
+
+    .some-link {
+        a.btn {
+            background: inherit;
+            box-shadow: 0 0 4px @font-color;
+
+            &:hover {
+                background: inherit;
+                box-shadow: 0 0 8px #fff;
+            }
+        }
+    }
+
+    header {
+        background: @bg;
+
+        .head-link {
+            background: @bg;
+
+            &.fix {
+                color: @font-color;
+                background: rgba(39, 43, 52, .6);
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, .8);
+
+                .btn .iconfont {
+                    color: #fff;
+                }
+            }
+
+            a.btn {
+                color: @font-color;
+
+                &:hover {
+                    color: #fff;
+                    background: rgba(0, 0, 0, .1);
+
+                    .iconfont {
+                        color: #fff;
+                    }
+                }
+
+                &.is-active {
+                    background: rgba(0, 0, 0, .3);
+                    .iconfont {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    #index-content {
+        &:before {
+            background-color: @bg;
+        }
+
+        .article {
+            &.year {
+                span.year {
+                    color: @font-color;
+                    background: @light-bg;
+                }
+            }
+
+            .time {
+                &:after {
+                    right: -6px;
+                    top: 13px;
+                    background: #666;
+                    border: 4px solid @bg;
+                }
+            }
+
+            .title {
+                color: @dark-blue;
+            }
+
+            .category-name {
+                color: @font-color;
+                background: @bg;
+                opacity: .4;
+
+                &.work {
+                    color: #9BDBFD;
+                }
+
+                &.life {
+                    color: #FD9927;
+                }
+
+                &.study {
+                    color: #B5CEA8;
+                }
+
+                &:hover {
+                    opacity: .5;
+                    box-shadow: 0px 0px 6px @font-color;
+                }
+            }
+        }
+    }
+
+    #nav-bar div.toc {
+        border-right: 2px solid @bg;
+    }
+
+    #content-main {
+
+        a:link,
+        a:visited {
+            color: @dark-blue;
+        }
+
+        .list-item {
+            background: @light-bg;
+        }
+
+        .markdown-body {
+            color: @font-color;
+
+            table {
+                background: #292929;
+                border-radius: 2px;
+
+                tr {
+                    background: #333;
+                }
+            }
+
+            img {
+                opacity: .8;
+            }
+
+            pre {
+                background: rgba(0, 0, 0, .2);
+            }
+
+            code {
+                color: #FD9927;
+                background: #444;
+            }
+
+            blockquote {
+                color: #b6b6b6;
+                border-left: .25em solid #c3c3c3;
+            }
+
+            .highlight {
+                .name {
+                    color: #559AD4;
+                }
+
+                .attr,
+                .literal,
+                .keyword,
+                .params {
+                    color: #9BDBFD;
+                }
+
+                .string, .selector-tag, .attribute {
+                    color: #CA8E76;
+                }
+
+                .title,
+                .built_in {
+                    color: #DBDBA9;
+                }
+
+                .comment {
+                    color: #669352;
+                }
+
+                .number,
+                .bullet {
+                    color: #B5CEA8;
+                }
+            }
+        }
+    }
+
+    .alert,
+    .warn,
+    .error {
+        opacity: .8;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .night {
+        header {
+            .head-link {
+                position: absolute;
+                left: -80vw;
+                transition: left 0.2s ease-in, opacity 0.2s linear;
+                &:before {
+                    background: linear-gradient(135deg, @deep-bg 25%,
+                    @light-bg 0, @light-bg 50%,
+                    @deep-bg 0, @deep-bg 75%,
+                    @light-bg 0);
+                }
+                a.btn .iconfont {
+                    color: @font-color;
+                }
+            }
+
+            .toolbar {
+                &.fix {
+                    background: @bg;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, .8);
+                }
+            }
+        }
+        main .more {
+            background: rgba(255, 255, 255, .1);
+        }
+    }
+}
