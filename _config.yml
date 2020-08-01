@@ -72,10 +72,10 @@ theme: ede # 我的主题
 deploy:
   type: git
   repo:
-    github: git@github.com:edeity/blog.git,gh-pages
+    github: https://github.com/edeity/blog.git,gh-pages
 
 # plugin：hexo-all-minifier
-all_minifier: false
+all_minifier: true
  
 # plugin：hexo-renderer-markdown-it
 markdown_it_plus:

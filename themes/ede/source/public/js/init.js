@@ -64,10 +64,10 @@ $(function () {
                 return false;
             }
         },
-        getItem(key) {
+        getItem: function (key) {
             return window.localStorage.getItem(util.prefix + key);
         },
-        setItem(key, value) {
+        setItem: function (key, value) {
             window.localStorage.setItem(util.prefix + key, value);
         }
     };
@@ -780,52 +780,52 @@ $(function () {
     };
 
     // 一年时间剩余
-    var timeLeft = {
-        init: function () {
-            var $timeLeft = $('.time-left');
-            var date = new Date();
-            if ($timeLeft) {
-                var $time = $('<div class="time">');
-                var $timeTag = $('<div class="time-tag">');
-                var totalDay = timeLeft.isLeapYear() ? 366 : 365;
-                var percent = Math.floor(timeLeft.getDayInYear() / totalDay * 100);
-                var width = $timeLeft.width();
-                setTimeout(function () {
-                    $time.css('width', percent + '%');
-                    var time = (date.getMonth() + 1) + '月' + date.getDate() + '日';
-                    $timeTag.text(time);
-                    let left = width * percent / 100 - 60;
-                    if (left < 0) {
-                        left = 0;
-                    }
-                    $timeTag.css('left', left);
-                }, 100);
-                $time.append($timeTag);
-                $timeLeft.append($time);
-            }
-        },
-        isLeapYear: function () {
-            var date = new Date();
-            var year = date.getFullYear();
-            return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-        },
-        getDayInYear: function () {
-            var dateArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            var date = new Date();
-            var day = date.getDate();
-            var month = date.getMonth();
-            var result = 0;
-            for (var i = 0; i < month; i++) {
-                result += dateArr[i];
-            }
-            result += day;
-            //判断是否闰年
-            if (month > 1 && timeLeft.isLeapYear()) {
-                result += 1;
-            }
-            return result;
-        }
-    };
+    // var timeLeft = {
+    //     init: function () {
+    //         var $timeLeft = $('.time-left');
+    //         var date = new Date();
+    //         if ($timeLeft) {
+    //             var $time = $('<div class="time">');
+    //             var $timeTag = $('<div class="time-tag">');
+    //             var totalDay = timeLeft.isLeapYear() ? 366 : 365;
+    //             var percent = Math.floor(timeLeft.getDayInYear() / totalDay * 100);
+    //             var width = $timeLeft.width();
+    //             setTimeout(function () {
+    //                 $time.css('width', percent + '%');
+    //                 var time = (date.getMonth() + 1) + '月' + date.getDate() + '日';
+    //                 $timeTag.text(time);
+    //                 let left = width * percent / 100 - 60;
+    //                 if (left < 0) {
+    //                     left = 0;
+    //                 }
+    //                 $timeTag.css('left', left);
+    //             }, 100);
+    //             $time.append($timeTag);
+    //             $timeLeft.append($time);
+    //         }
+    //     },
+    //     isLeapYear: function () {
+    //         var date = new Date();
+    //         var year = date.getFullYear();
+    //         return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    //     },
+    //     getDayInYear: function () {
+    //         var dateArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    //         var date = new Date();
+    //         var day = date.getDate();
+    //         var month = date.getMonth();
+    //         var result = 0;
+    //         for (var i = 0; i < month; i++) {
+    //             result += dateArr[i];
+    //         }
+    //         result += day;
+    //         //判断是否闰年
+    //         if (month > 1 && timeLeft.isLeapYear()) {
+    //             result += 1;
+    //         }
+    //         return result;
+    //     }
+    // };
 
 
     // workbox3接口
@@ -889,7 +889,7 @@ $(function () {
     beauty.init();
     safe.init();
     slideBar.init();
-    timeLeft.init();
+    // timeLeft.init();
     if (switchConfig.toc === true) {
         toc.init();
     }
