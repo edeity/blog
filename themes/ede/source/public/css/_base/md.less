@@ -1,0 +1,46 @@
+.markdown-body [type=checkbox] {
+  pointer-events: none;
+}
+
+// 用来装饰md文件中的class
+.markdown-body {
+  * {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  // 高亮一下行级代码块
+  code {
+    color: #d14;
+    margin: 0 2px;
+  }
+
+  // 假装是命令行样式
+  .shell {
+    background: #000;
+    border-radius: 3px;
+
+    .prefix {
+      display: inline-block;
+      margin: 5px 5px 5px 10px;
+      color: #51E3F5;
+    }
+
+    .command {
+      display: inline-block;
+      color: #c7c7c7
+    }
+  }
+
+  // 调整下代码的边距
+  figure {
+    margin: 1em 0;
+
+    .highlight table {
+      overflow-x: hidden;
+
+      &:hover {
+        overflow-x: auto;
+      }
+    }
+  }
+}

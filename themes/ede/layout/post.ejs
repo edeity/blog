@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN" class="night">
+<%- partial('_partial/head') %>
+<body>
+<%- partial('_partial/header') %>
+<%# 左侧目录 %>
+<% if (page.toc !== false && config.ede_theme.switch.toc !== false) { %>
+    <div id="nav-bar" style="display: none">
+        <div class="toc">
+            <%- toc(page.content, {list_num: false}) %>
+        </div>
+    </div>
+<% } %>
+<%# 主题内容 %>
+<main id="content-main" class="section">
+    <div class="list-item">
+        <h1 class="post-title">
+            <a id="<%= page.title %>" class="article-link" href="">
+                <%= page.title %>
+            </a>
+        </h1>
+        <div class="post-meta">
+            <time class="meta published">
+                <%= date(page.date, 'MMM D, Y') %>
+            </time>
+        </div>
+        <!-- 文章声明 -->
+        <% if (typeof page.alert !== 'undefined') { %>
+            <div class="alert">
+                <% if (page.alert === null) { %>
+                    <%= config.ede_theme.tip.alert %>
+                <% } else { %>
+                    <%= page.alert %>
+                <% } %>
+            </div>
+        <% } %>
+        <% if (typeof page.warn !== 'undefined') { %>
+            <div class="warn">
+                <% if (page.warn === null) { %>
+                    <%= config.ede_theme.tip.warn %>
+                <% } else { %>
+                    <%= page.warn %>
+                <% } %>
+            </div>
+        <% } %>
+        <% if (typeof page.error !== 'undefined') { %>
+            <div class="alert">
+                <% if (page.error === null) { %>
+                    <%= config.ede_theme.tip.error %>
+                <% } else { %>
+                    <%= page.error %>
+                <% } %>
+            </div>
+        <% } %>
+        <div class="article">
+            <div class="post-excerpt markdown-body">
+                <%- page.content %>
+            </div>
+        </div>
+    </div>
+    <%# 更多导航 %>
+    <div class="more section">
+        <% if (page.prev) { %>
+            <div class="pre">
+                <a class="article-link" href="<%= '/' + page.prev.path %>">
+                    <i class="iconfont icon-right"></i>
+                    <span><%= page.prev.title %></span>
+                </a>
+            </div>
+        <% } else if (page.next) { %>
+            <div class="pre">
+                <a class="article-link" href="/">
+                    <i class="iconfont icon-right"></i>
+                    <span>回到首页</span>
+                </a>
+            </div>
+        <% } %>
+        <% if (page.next) { %>
+            <div class="next">
+                <a class="article-link" href="<%= '/' + page.next.path %>">
+                    <%= page.next.title %>
+                    <i class="iconfont icon-right"></i>
+                </a>
+            </div>
+        <% } else { %>
+            <div class="next">
+                <a class="article-link" href="/">
+                    <span>回到首页</span>
+                    <i class="iconfont icon-right"></i>
+                </a>
+            </div>
+        <% } %>
+    </div>
+</main>
+</body>
+<%- partial('_partial/footer') %>
+</html>

@@ -1,0 +1,131 @@
+// 自定义评论的样式
+#comment {
+  padding: 1rem 2rem;
+
+  .g-editor-submit {
+    background: @light-blue;
+
+    &:hover {
+      background: @link-blue;
+    }
+
+    &:disabled {
+      background: @light-blue;
+    }
+  }
+
+  .g-footer-container {
+    display: none;
+  }
+}
+
+
+// 移动端评论框的样式
+@media screen and (max-width: 768px) {
+  #comment {
+    padding: 0;
+    margin-top: 4rem;
+  }
+
+  .markdown-body ul,
+  .markdown-body ol {
+    padding-left: 1em;
+  }
+
+  .g-root-container {
+    padding: 0 2rem !important;
+
+    .g-container {
+      padding-left: 0 !important;
+    }
+  }
+
+  .gc {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    .g-comment-avatar {
+      position: relative;
+      display: inline-block;
+      left: 60px;
+      padding: 10px 8px;
+      width: 52px;
+      height: 58px;
+      border-bottom: 1px solid #e1e4e8;
+
+      .g-comment-avatar-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .g-comment-main {
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      .g-comment-header {
+        margin: 0;
+        margin-left: 50px;
+        padding: 10px;
+        font-size: 12px;
+        border-bottom: 1px solid #e1e4e8;
+        border-radius: 0;
+
+        .g-comment-name {
+          display: block;
+        }
+      }
+
+      .g-comment-body {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .g-editor-container {
+    .g-editor-main {
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      .g-editor-tabs {
+        .g-editor-tab {
+          font-size: 12px;
+          padding: 10px;
+        }
+      }
+    }
+
+    .g-editor-avatar {
+      display: none;
+    }
+  }
+
+  .g-editor-footer {
+    .g-editor-footer-tip {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .g-root-container {
+    padding: 0 !important;
+    margin-bottom: 0;
+  }
+
+  .g-editor-submit {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+  }
+}

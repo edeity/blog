@@ -1,0 +1,179 @@
+@import "_base/color.less";
+
+// 平板
+@media screen and(max-width: 768px) {
+  .section {
+    width: 100%;
+  }
+}
+
+// 手机
+@media screen and (max-width: 560px) {
+  // 按钮
+  .some-link {
+    display: none;;
+  }
+
+  // 加载样式
+  .loading {
+    display: none;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  // 移动端去掉下划线
+  .title.underline {
+    &:before {
+      content: none;
+    }
+  }
+
+  header {
+    background: linear-gradient(135deg, @bg-deep-color, #38aff3);
+
+    // 移动端标题
+    h1 {
+      display: block;
+      height: 180px;
+
+      a {
+        display: block;
+        line-height: 180px;
+        font-size: 2.4rem;
+      }
+    }
+
+    // 点击唤起左侧菜单的顶部栏
+    .toolbar {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 3rem;
+      line-height: 3rem;
+      text-align: left;
+
+      // 背景
+      &:before {
+        display: none;
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        opacity: 0;
+        transition: opacity .2s linear;
+      }
+
+      &.fix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #36A8EC;
+      }
+
+      // 激活时显示背景
+      &.is-active {
+        &:before {
+          display: block;
+          opacity: .4;
+        }
+      }
+
+      // 按钮
+      .icon-menu {
+        display: inline-block;
+        color: white;
+        margin-left: 12px;
+        font-size: 32px;
+      }
+    }
+
+    // 左侧菜单
+    .head-link {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -80vw;
+      width: 75vw;
+      height: 100vh;
+      background: white;
+      opacity: 0;
+      transition: left .2s ease-in, opacity .2s linear;
+
+      &.fix {
+        left: -80vw;
+        background: white;
+      }
+
+      &.is-active {
+        opacity: 1;
+        left: 0;
+      }
+
+      // 间隔背景
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 180px;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg,
+        #2A99E5 25%, #36A8EC 0, #36A8EC 50%, #2A99E5 0, #2A99E5 75%, #36A8EC 0);
+        background-size: 70px 70px;
+      }
+
+      // 每个按钮
+      a.btn:extend(.waves) {
+        display: block;
+        color: #444;
+        font-weight: bold;
+        text-align: left;
+
+        &:hover, &:active {
+          background: black;
+        }
+
+        &.is-active {
+          color: @base-blue;
+          background: rgba(0, 0, 0, 0.05);
+
+          .iconfont {
+            color: @base-blue;
+            font-weight: bold;
+          }
+        }
+
+        .iconfont {
+          color: #444;
+          font-size: 1.2rem;
+          font-weight: normal;
+        }
+
+        &:hover {
+          color: @base-blue;
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 20px 0 40px;
+
+    .offline {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      background: white;
+      padding: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+}

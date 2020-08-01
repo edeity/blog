@@ -33,7 +33,6 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -66,7 +65,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: edeity # 我的主题
+theme: ede # 我的主题
 
 # plugin
 # plugin：hexo-deployer-git
@@ -76,7 +75,7 @@ deploy:
     github: git@github.com:edeity/blog.git,gh-pages
 
 # plugin：hexo-all-minifier
-all_minifier: true
+all_minifier: false
  
 # plugin：hexo-renderer-markdown-it
 markdown_it_plus:
@@ -90,30 +89,22 @@ markdown_it_plus:
   quotes: “”‘’
   pre_class: highlight
 
-# edeity theme config
+# ede theme config
 ede_theme:
-  # 开关
+  # switch
   switch:
     toc: true
     use_pwa: false
+  # tip before article
   tip:
     alert: 博主很多屁话想说，但一时不知说些什么
     warn: 文章未成熟，请绕路
     error: 文章关掉有错误，但是博主懒，不想改，Pr pr
   # top menu
   menu:
-    0:
-      title: Home
-      link: /
-      ico: home
-    1:
-      title: About
-      link: /about/index.html
-      ico: me
-    2:
-      title: Github
-      link: https://github.com/edeity
-      ico: github
-  # foot
-  foot:
-    title: Edeity © 2015-2019 · powered by hexo
+    - { title: Home, link: /, ico: home }
+    - { title: About, link: /about/index.html, ico: me }
+    - { title: Github, link: https://github.com/edeity, ico: github }
+  # desc
+  head: Edeity's Blog
+  foot: Edeity © 2015-2019 · powered by hexo

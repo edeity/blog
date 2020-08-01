@@ -4,6 +4,7 @@ link: learn_workbox
 date: 2018-08-22
 categories: study
 tags: [workbox, pwa, offline]
+warn: 鉴于国内PWA比较鸡肋，此博客关闭了PWA，文中部分效果已失效
 ---
 
 
@@ -78,7 +79,6 @@ workbox.routing.registerRoute(
 ![离线访问图片](https://edeity.oss-cn-shenzhen.aliyuncs.com/2018/offline_img.png)
 
 <div class="img-desc">访问图片：在线 Vs离线</div>
-
 ![离线访问未访问的网站](https://edeity.oss-cn-shenzhen.aliyuncs.com/2018/offline_site.png)
 
 <div class="img-desc">访问网站：在线 VS 离线</div>

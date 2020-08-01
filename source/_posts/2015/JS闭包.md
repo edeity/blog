@@ -122,4 +122,4 @@ function add(a, b) {
 console.log(""+add(1, 2).add(3));
 ```
 
-附：MDN中关于[closure的描述](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+附：[MDN中关于closure的描述](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)

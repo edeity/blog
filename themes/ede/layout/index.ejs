@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN" class="night">
+<%- partial('_partial/head') %>
+<body>
+<%- partial('_partial/header') %>
+<main id="index-content" class="section">
+    <% var preYear = null %>
+    <% site.posts.sort('date', -1).forEach(function (eachPost) { %>
+        <% if (!preYear || eachPost.date.year() < preYear) { %>
+            <% preYear = eachPost.date.year() %>
+            <div class="article year">
+                        <span class="year">
+                            <%= eachPost.date.year() %>
+                        </span>
+            </div>
+        <% } %>
+        <div class="article">
+            <span class="time"><%= date(eachPost.date, 'MMM D ') %></span>
+            <a title="<%= eachPost.title %>" href="<%= '/' + eachPost.path %>" class="title underline">
+                <%= eachPost.title %>
+            </a>
+            <% eachPost.categories.forEach(function (eachCategory) { %>
+                <span class="meta category-name <%= eachCategory.name %>"><%= eachCategory.name %></span>
+            <% }) %>
+        </div>
+    <% }) %>
+</main>
+</body>
+<%- partial('_partial/footer') %>
+</html>

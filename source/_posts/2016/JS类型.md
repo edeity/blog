@@ -59,13 +59,13 @@ return typeof obj === "object" || typeof obj === "function" ?
 
 如，据史书记载，`typeof`在判断`Function`时，存在兼容性问题：
 
-> - FireFox：在HTML的<object>元素上使用typeof的话，会返回function
-> - IE：如果对其他窗口（比如iframe）的不存在的对象进行类型判断，该类型会返回unknown
-> - Safari：DOM的NodeList是一个function
+>- FireFox：在HTML的`<object>`元素上使用typeof的话，会返回function
+>- IE：如果对其他窗口（比如iframe）的不存在的对象进行类型判断，该类型会返回unknown
+>- Safari：DOM的NodeList是一个`function`
 
 ### Array
 
-毫无疑问，对于ES5+ ，[Array.isArray()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)是最好用的方法，
+毫无疑问，[Array.isArray()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)是最好用的方法，
 
 ## 遍历
 

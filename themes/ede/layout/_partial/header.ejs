@@ -1,0 +1,34 @@
+<div class="loading"></div>
+<div id="switch" data-switch="<%= JSON.stringify(config.ede_theme.switch) %>"></div>
+
+<header class="fullscreen">
+    <%# 移动端按钮 %>
+    <div class="toolbar">
+        <i class="iconfont icon-menu"></i>
+    </div>
+    <h1>
+        <a href="/"><%= config.title %></a>
+    </h1>
+    <% if(config.ede_theme.menu) { %>
+        <div class="head-link">
+            <% config.ede_theme.menu.forEach(function (eachMenu) { %>
+                <a class="btn waves" href="<%= url_for(eachMenu.link) %>">
+                    <span>
+                        <i class="iconfont icon-<%= eachMenu.ico %>">
+                            <%= eachMenu.title %>
+                        </i>
+                    </span>
+                </a>
+            <% }); %>
+        </div>
+    <% } %>
+</header>
+
+<div class="some-link">
+    <a class="btn" id="light-or-not">
+        <i class="iconfont icon-light"></i>
+    </a>
+    <a style="display: none;" class="btn" id="up-to-top">
+        <i class="iconfont icon-up"></i>
+    </a>
+</div>
