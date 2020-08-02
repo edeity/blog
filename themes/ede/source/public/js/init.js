@@ -7,7 +7,8 @@ $(function () {
     var $h1 = $('header h1');
     var FIX_HEIGHT = $h1.is(":hidden") ? 0 : $h1.height(); // 180
     var STATIC_HEIGHT = 142;
-    var switchConfig = JSON.parse($('#switch').attr('data-switch'));
+    var switchStr = $('#switch').attr('data-switch');
+    var switchConfig = switchStr ? JSON.parse(switchStr) : '';
 
     // 其他常用工具
     var util = {

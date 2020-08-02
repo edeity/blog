@@ -4,7 +4,7 @@
 <body>
 <%- partial('_partial/header') %>
 <%# 左侧目录 %>
-<% if (page.toc !== false && config.ede_theme.switch.toc !== false) { %>
+<% if (page.toc !== false && !(config.ede_theme && config.ede_theme.switch && config.ede_theme.switch.toc === false)) { %>
     <div id="nav-bar" style="display: none">
         <div class="toc">
             <%- toc(page.content, {list_num: false}) %>

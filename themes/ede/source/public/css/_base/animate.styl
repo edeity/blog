@@ -1,4 +1,4 @@
-@import "./color.less";
+@import "color.styl";
 // loading
 .lds-ring {
   display: inline-block;
@@ -52,7 +52,7 @@
   }
   50% {
     opacity: 1;
-    text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px @link-blue;
+    text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 15px $link-blue;
   }
   to {
     opacity: 0.7;
@@ -81,7 +81,7 @@
     left: 0;
     pointer-events: none;
     //设置径向渐变
-    background-image: radial-gradient(circle, @deep-blue 10%, transparent 10.01%);
+    background-image: radial-gradient(circle, $deep-blue 10%, transparent 10.01%);
     background-repeat: no-repeat;
     background-position: 50%;
     transform: scale(10, 10);

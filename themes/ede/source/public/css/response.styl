@@ -1,7 +1,7 @@
-@import "_base/color.less";
+@import "_base/color.styl";
 
 // 平板
-@media screen and(max-width: 768px) {
+@media screen and (max-width: 768px) {
   .section {
     width: 100%;
   }
@@ -11,7 +11,7 @@
 @media screen and (max-width: 560px) {
   // 按钮
   .some-link {
-    display: none;;
+    display: none;
   }
 
   // 加载样式
@@ -138,11 +138,11 @@
         }
 
         &.is-active {
-          color: @base-blue;
+          color: $base-blue;
           background: rgba(0, 0, 0, 0.05);
 
           .iconfont {
-            color: @base-blue;
+            color: $base-blue;
             font-weight: bold;
           }
         }
@@ -154,7 +154,7 @@
         }
 
         &:hover {
-          color: @base-blue;
+          color: $base-blue;
           background: transparent;
         }
       }

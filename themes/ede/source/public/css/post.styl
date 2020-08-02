@@ -1,13 +1,13 @@
-@import "_base/color.less";
+@import "_base/color.styl";
 
-@import (inline) "_base/github-markdown.css";
-@import "_base/md.less";
+@import "_base/github-markdown.css";
+@import "_base/md.styl";
 // 覆盖github-markdown.css的样式
 // @import (inline) "_base/gitment.css";
 
-@import "./comp/img-viewer.less";
-@import "./comp/comment.less";
-@import "./comp/gif.less";
+@import "comp/img-viewer.styl";
+@import "comp/comment.styl";
+@import "comp/gif.styl";
 
 // 左侧引导条
 #nav-bar {
@@ -26,12 +26,11 @@
     position: fixed;
     top: 60px;
     transition: top .3s linear;
-    //height: ~'calc(100vh - 40px)';
   }
 
   div.toc {
     width: 260px;
-    height: ~'calc(100vh - 80px)';
+    height: calc(100vh - 80px);
     overflow: hidden;
     color: #333;
     border-right: 1px solid #e1e1e1;
@@ -42,7 +41,7 @@
     }
 
     ol.toc {
-      height: ~'calc(100% - 20px)';
+      height: calc(100% - 20px);
       padding: 10px 24px;
       overflow: auto;
       font-size: 14px;
@@ -65,7 +64,7 @@
         color: #7f8c8d;
 
         &:hover {
-          color: @base-blue;
+          color: $base-blue;
         }
       }
     }
@@ -75,10 +74,10 @@
     color: #666;
 
     &.is-active {
-      color: @btn-color;
+      color: $btn-color;
 
       .toc-link {
-        color: @btn-color;
+        color: $btn-color;
       }
     }
   }
@@ -88,7 +87,7 @@
 
 // 主体
 main {
-  min-height: ~'calc(100vh - 350px)';
+  min-height: calc(100vh - 350px);
 
   // 名言
   // .aphorism {
@@ -107,12 +106,12 @@ main {
 
     &:link,
     &:visited {
-      color: @link-blue;
+      color: $link-blue;
       opacity: 0.8;
     }
 
     &:hover {
-      color: @link-blue;
+      color: $link-blue;
       opacity: 1;
     }
   }
@@ -271,7 +270,7 @@ main {
 // ------局部模块调整 END------
 
 
-@media screen and(max-width: 1100px) {
+@media screen and (max-width: 1100px) {
 
   // 中等屏幕不显示导航栏
   #nav-bar {

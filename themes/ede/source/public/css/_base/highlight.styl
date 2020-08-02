@@ -1,5 +1,5 @@
 // 修正markdown highlight的css样式, 因为css选择器相同, 故该文件应该在github-markdown.css之后
-@code-bg-color: #F7F7F7;
+$code-bg-color = #F7F7F7;
 
 .markdown-body .highlight {
   // 取消一些github-markdown的样式
@@ -8,7 +8,7 @@
   }
 
   table {
-    background-color: @code-bg-color;
+    background-color: $code-bg-color;
 
     tr {
       border-top: none;

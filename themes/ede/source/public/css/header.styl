@@ -1,4 +1,4 @@
-@import "_base/color";
+@import "_base/color.styl";
 
 // hover 时的动效
 .underline {
@@ -35,10 +35,10 @@
     content: '';
     position: absolute;
     left: 222px;
-    min-height: ~'calc(100vh - 120px)';
+    min-height: calc(100vh - 120px);
     width: 3px;
-    height: ~'calc(100% - 30px)';
-    background-color: @bg-deep-color;
+    height: calc(100% - 30px);
+    background-color: $bg-deep-color;
     // transition: background-color .5s ease-in-out;
   }
 
@@ -98,7 +98,7 @@
         height: 7px;
         background: white;
         border-radius: 100%;
-        border: 3px solid @bg-deep-color;
+        border: 3px solid $bg-deep-color;
         // transition: border-color .5s ease-in-out, background-color .5s ease-in-out;
       }
     }
@@ -107,9 +107,10 @@
     .title {
       float: left;
       height: 40px;
+      max-width 445px;
       line-height: 40px;
       margin: 10px 20px 10px 60px;
-      color: @link-blue;
+      color: $link-blue;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden
@@ -167,12 +168,12 @@
         display: none;
       }
 
-      @timeLength: 20%;
+      $timeLength = 20%;
 
       span.time {
         position: absolute;
         right: 0;
-        width: @timeLength;
+        width: $timeLength;
         margin: 0;
         padding-right: 12px;
 
@@ -186,7 +187,7 @@
       }
 
       a.title {
-        width: 100% - @timeLength;
+        width: 100% - $timeLength;
         margin: 0;
         padding: 0 0 0 12px;
       }

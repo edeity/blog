@@ -1,6 +1,8 @@
 <footer class="section fullscreen">
     <div class="footer-desc">
-        <%= config.ede_theme.foot %>
+        <% if (config.ede_theme && config.ede_theme.foot) { %>
+            <%= config.ede_theme.foot %>
+        <% } %>
     </div>
 </footer>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

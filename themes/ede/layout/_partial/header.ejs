@@ -1,5 +1,5 @@
 <div class="loading"></div>
-<div id="switch" data-switch="<%= JSON.stringify(config.ede_theme.switch) %>"></div>
+<div id="switch" data-switch="<%= JSON.stringify(config.ede_theme && config.ede_theme.switch) %>"></div>
 
 <header class="fullscreen">
     <%# 移动端按钮 %>
@@ -9,19 +9,20 @@
     <h1>
         <a href="/"><%= config.title %></a>
     </h1>
-    <% if(config.ede_theme.menu) { %>
-        <div class="head-link">
-            <% config.ede_theme.menu.forEach(function (eachMenu) { %>
-                <a class="btn waves" href="<%= url_for(eachMenu.link) %>">
-                    <span>
-                        <i class="iconfont icon-<%= eachMenu.ico %>">
-                            <%= eachMenu.title %>
-                        </i>
-                    </span>
-                </a>
-            <% }); %>
-        </div>
-    <% } %>
+
+    <div class="head-link">
+        <% var menu = config.ede_theme && config.ede_theme.menu
+                ? config.ede_theme.menu : [{title: 'Home', link: '/', ico: 'home'}]%>
+        <% menu.forEach(function (eachMenu) { %>
+            <a class="btn waves" href="<%= url_for(eachMenu.link) %>">
+                <span>
+                    <i class="iconfont icon-<%= eachMenu.ico %>">
+                        <%= eachMenu.title %>
+                    </i>
+                </span>
+            </a>
+        <% }); %>
+    </div>
 </header>
 
 <div class="some-link">

@@ -1,15 +1,15 @@
 //@import (inline) "fonts/icon-font.css";
 //@import (inline) "_base/font.css";
 // 夜间模式
-@import "./night.less";
-@import "_base/animate";
-@import "_base/highlight";
-@import "_base/color";
+@import "night.styl";
+@import "_base/animate.styl";
+@import "_base/highlight.styl";
+@import "_base/color.styl";
 
-@import "./header.less";
-@import "./post.less";
+@import "header.styl";
+@import "post.styl";
 
-@max-width: 750px;
+$max-width = 750px;
 
 // ------覆盖样式_START------
 * {
@@ -72,9 +72,9 @@ html.transition-all-color {
   line-height: 30px;
   padding: 0 10px;
   //   margin: 5px;
-  border: 1px solid @btn-color;
+  border: 1px solid $btn-color;
   border-radius: 2px;
-  color: @btn-color;
+  color: $btn-color;
   background: white;
   font-size: 13px;
   text-align: right;
@@ -84,7 +84,7 @@ html.transition-all-color {
 
 .section {
   display: block;
-  width: @max-width;
+  width: $max-width;
   margin: 0 auto;
 }
 
@@ -229,7 +229,7 @@ div.loading {
 header {
   position: relative;
   z-index: 99;
-  background: linear-gradient(135deg, @bg-deep-color, #38aff3);
+  background: linear-gradient(135deg, $bg-deep-color, #38aff3);
   text-align: center;
 
   h1 {
@@ -294,7 +294,7 @@ header {
 
       &:hover {
         color: white;
-        background: @bg-deep-color;
+        background: $bg-deep-color;
         //opacity: 1;
       }
 
@@ -302,8 +302,10 @@ header {
         margin-right: 18px;
         font-size: 18px;
         color: white;
+        &:before {
+          margin-right: 4px;
+        }
       }
-
     }
   }
 }
@@ -330,7 +332,7 @@ header {
     line-height: 1.6rem;
     margin-bottom: 8px;
     color: white;
-    background: @light-blue;
+    background: $light-blue;
     border-radius: 3px;
     transition: .2s ease-in-out;
     text-align: center;
@@ -345,7 +347,7 @@ header {
     }
 
     &:hover {
-      background: @btn-color;
+      background: $btn-color;
     }
   }
 

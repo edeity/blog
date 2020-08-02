@@ -1,6 +1,6 @@
-@import "../_base/color";
+@import "../_base/color.styl";
 // gif
-@gif-btn-width: 48px;
+$gif-btn-width = 48px;
 .gif-container {
   position: relative;
   text-align: center;
@@ -12,8 +12,8 @@
   .stop,
   .play {
     position: absolute;
-    width: @gif-btn-width;
-    height: @gif-btn-width;
+    width: $gif-btn-width;
+    height: $gif-btn-width;
     top: 0;
     left: 0;
     right: 0;
@@ -21,7 +21,7 @@
     margin: auto;
     z-index: 2;
     transition: all 0.4s ease-in;
-    color: @deep-blue !important;
+    color: $deep-blue !important;
     opacity: .4;
     cursor: pointer;
 
@@ -42,8 +42,8 @@
     .iconfont {
       position: relative;
       display: inline-block;
-      font-size: @gif-btn-width;
-      line-height: @gif-btn-width;
+      font-size: $gif-btn-width;
+      line-height: $gif-btn-width;
       transition: all 0.4s ease-in;
       border-radius: 100%;
       color: white;
@@ -51,9 +51,9 @@
       opacity: .7;
 
       &.icon-play {
-        width: @gif-btn-width;
-        height: @gif-btn-width;
-        font-size: @gif-btn-width;
+        width: $gif-btn-width;
+        height: $gif-btn-width;
+        font-size: $gif-btn-width;
       }
     }
   }

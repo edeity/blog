@@ -1,0 +1,25 @@
+{
+  "name": "hexo-theme-ede",
+  "version": "1.0.2",
+  "description": "a simple theme for hexo, provide light and dark mode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edeity/hexo-theme-ede.git"
+  },
+  "keywords": [
+    "hexo",
+    "hexo-theme",
+    "simple",
+    "dark-mode"
+  ],
+  "author": "edeity",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edeity/hexo-theme-ede/issues"
+  },
+  "homepage": "https://github.com/edeity/hexo-theme-ede#readme"
+}

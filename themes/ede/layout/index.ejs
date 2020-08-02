@@ -9,9 +9,9 @@
         <% if (!preYear || eachPost.date.year() < preYear) { %>
             <% preYear = eachPost.date.year() %>
             <div class="article year">
-                        <span class="year">
-                            <%= eachPost.date.year() %>
-                        </span>
+                <span class="year">
+                    <%= eachPost.date.year() %>
+                </span>
             </div>
         <% } %>
         <div class="article">
