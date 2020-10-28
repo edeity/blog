@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN" class="night"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,maximum-scale=4,user-scalable=0" name="viewport"><title>Edeity&#39;s Blog</title><meta name="description" content="Try to be a qualified programmer"><meta property="og:type" content="website"><meta property="og:description" content="Try to be a qualified programmer"><meta property="og:title" content="Edeity&#39;s Blog"><meta property="og:site_name" content="Edeity&#39;s Blog"><meta property="og:url" content="https://blog.edeity.me"><meta property="og:image" content="https://edeity.oss-cn-shenzhen.aliyuncs.com/public/edeity_o.png"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link rel="mainfest" href="/mainfest.json"><link rel="stylesheet" href="/public/css/common.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_707055_4b9og9sc5lx.css"><script>// 切换暗夜模式，需要在CSS渲染前调整，否则重绘时会闪烁
+        document.addEventListener('DOMContentLoaded', function () {
+            // 是否需要切换黑夜模式
+            let isForceNightTheme = window.location.search.indexOf('theme=night') !== -1
+                || window.localStorage.getItem('edeity-theme_theme') === 'night';
+            let isForceLightTheme = window.location.search.indexOf('theme=light') !== -1
+                || window.localStorage.getItem('edeity-theme_theme') === 'light';
+            let hours = new Date().getHours();
+            hours = 22;
+            var html = document.querySelector('html')
+            if (isForceNightTheme) {
+                html.classList.add('night');
+            } else if (isForceLightTheme) {
+                html.classList.remove('night');
+            } else {
+                // 没有强制开关，用时间计算
+                if (hours < 8 || hours >= 20) {
+                    html.classList.add('night');
+                } else {
+                    html.classList.remove('night');
+                }
+            }
+            // 是否需要隐藏左侧导航栏
+            if (document.querySelector('ol.toc') !== null) {
+                var bar = document.querySelector('#nav-bar')
+                bar.style.cssText = 'display: block'
+            }
+        });</script><meta name="generator" content="Hexo 5.0.0"></head><body><div class="loading"></div><div id="switch" data-switch="{&#34;toc&#34;:true,&#34;use_pwa&#34;:false}"></div><header class="fullscreen"><div class="toolbar"><i class="iconfont icon-menu"></i></div><h1><a href="/">Edeity&#39;s Blog</a></h1><div class="head-link"><a class="btn waves" href="/"><span><i class="iconfont icon-home">Home </i></span></a><a class="btn waves" href="/about/index.html"><span><i class="iconfont icon-me">About </i></span></a><a class="btn waves" target="_blank" rel="noopener" href="https://github.com/edeity"><span><i class="iconfont icon-github">Github</i></span></a></div></header><div class="some-link"><a class="btn" id="light-or-not"><i class="iconfont icon-light"></i> </a><a style="display:none" class="btn" id="up-to-top"><i class="iconfont icon-up"></i></a></div><div id="nav-bar" style="display:none"><div class="toc"></div></div><main id="content-main" class="section"><div class="list-item"><h1 class="post-title"><a id="2018年的日子" class="article-link" href="">2018年的日子</a></h1><div class="post-meta"><time class="meta published">Dec 27, 2018</time></div><div class="article"><div class="post-excerpt markdown-body"><p>人云：“画眉小槛晚花迟，一年弹指又春归”。我说：“哎呀，卧槽，一年咋又没了呢”。真J~儿奔波的一年。年初，人还在北京，看看小雪。年中，人已在广州，盘盘楼房（<small>买不起，买不起</small>）。年末，人却在珠海，吹吹海风。</p><p>老人家说，本命年易犯太岁，来年是旺年。去年本命年，红底裤穿了一年，平平淡淡。而今年，则有了波澜。</p><p>年初得了重感冒，往死里咳嗽，点外卖吐了一地，营养不良差点晕倒在公司宿舍，多亏谋谋千里送葡萄糖，捡回一条狗命。前所未有地感到：一个人，在北京，真他妈的孤独。而后回到广州，暴露了社交太浅的短板，只能独自在某直聘找找工作，见识了一些不靠谱的公司，最后选了相对靠谱的棒谷。然而棒谷也是一朵奇葩。双休，加班制度规范，可调休、双或三倍工资，绩效月结。然五险一金，能少就少，以公积金为例，按最低基准（4000）最低额度（5%）缴纳，每月到手两百，等同没有。</p><p>在棒谷呆了半年，由于没有食堂，长期吃外卖。偶尔不吃早餐，晚饭进食时间不规律。导致胃病加重，一度怀疑自己是不是得了胃癌，惶惶不可终日。最忙碌的便是10月，中秋加班，国庆节回了趟老家，回来后约了照胃镜的时间，并经同学介绍欲前往珠海面试。未料月中家里急电，外婆中风，只能夜半启程，再次回家探望。呆不够一天，又火速前往珠海面试。因隔日还要做全麻胃镜，早上面试完，下午又乘上回广州的城轨。三天三地奔波，甚是憔悴。庆幸的是，外婆福大命大、面试收到了OFFER、胃镜结果只是十二指肠炎。大悲剧开头，喜悲柔和的结尾，也算为这悲凉的中秋添加了一丝温暖。</p><p>为了保住剩下的半条狗命。我选择前往珠海。在北方重霾区呆了六年的我，终于在珠海找到了一丝归属。漫延的海岸线，茵茵的草坪，金黄的沙滩，沙滩外便是无际的海。站在海边礁石上，大陆海洋相互缠绵，你恰处在最热烈的焦点上，那些早已忘却的海浪海风在阳光明媚的日子里再一次从你耳边吹过，在你脚丫流动。礁石堆里，数不尽的小笨强（小螃蟹）小心翼翼地穿梭其中；不知名的海鸟从远处飞来，在海面突兀的地方暂歇，随即又飞往远处；一群中年大叔一身装备地站在石岸上，用力地将挥动着手里的鱼竿，看不清的鱼线被拉扯着奔向起伏的大海….</p><p><img src="https://edeity.oss-cn-shenzhen.aliyuncs.com/2018/behind_sea.jpg" alt="海边的金色"></p><div class="img-desc">给你们康康自带马赛克的金山</div><p>“景，慢慢品尝，而亲爱的你，还不滚犊子给老子起床上班！！！” 于是，在这明媚的早上，我，梳梳日渐高昂的发际线，穿上多天未洗的衣裳，戴上落在床底的红色狗牌，闻一下那饱含真菌芬芳的臭袜。“上班！走你！潇洒的人生不需要解释”！关于我的新东家，风雨中坚守30年的金山，年初搬到了高新区，离海不远。我终有幸体会到“别人家的饭堂”。周一至周五三餐免费，午餐晚餐三菜三肉一汤。那本已发福的身躯经不住诱惑，又开始了圆乎乎的生长。从北京到广州，从广州到珠海，为了便携，一路扔了不少的衣服，来金山一月，竟领了四件衬衫。唉，我就是那种容易被收买的人，为金山打CALL！！</p><p>18年将去，一同别去的还有伴随了6年的牙套。在照相机里漏出灿烂且不违和的笑容的那一刻，突然感觉六年间，来回于济南经十路上，来回于北京和济南的高铁上，来回于广州二号线上，以及昂贵的看牙花销，都真正有了价值。人生又有多少六年呢？六年前翻山越岭千里迢迢地来到山大，望着不远处红色圆润的六号教学楼，诚惶诚恐地迈出了大学的一步；六年后抛弃了对出人头地的渴望，选择了非一线的海滨城市。终于想清了很多。<strong>做人嘛，最重要的就是开心</strong>。</p><p>别了别了，有喜有悲，即将远去，我的2018。</p></div></div></div><div class="more section"><div class="pre"><a class="article-link" href="/css_of_index.html"><i class="iconfont icon-right"></i> <span>css中的“层”</span></a></div><div class="next"><a class="article-link" href="/learn_png_data.html">获取PNG中的“分辨率” <i class="iconfont icon-right"></i></a></div></div></main></body><footer class="section fullscreen"><div class="footer-desc">Edeity © 2015-2019 · powered by hexo</div></footer><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="/public/js/init.js"></script></html>

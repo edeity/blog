@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN" class="night"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,maximum-scale=4,user-scalable=0" name="viewport"><title>Edeity&#39;s Blog</title><meta name="description" content="Try to be a qualified programmer"><meta property="og:type" content="website"><meta property="og:description" content="Try to be a qualified programmer"><meta property="og:title" content="Edeity&#39;s Blog"><meta property="og:site_name" content="Edeity&#39;s Blog"><meta property="og:url" content="https://blog.edeity.me"><meta property="og:image" content="https://edeity.oss-cn-shenzhen.aliyuncs.com/public/edeity_o.png"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link rel="mainfest" href="/mainfest.json"><link rel="stylesheet" href="/public/css/common.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_707055_4b9og9sc5lx.css"><script>// 切换暗夜模式，需要在CSS渲染前调整，否则重绘时会闪烁
+        document.addEventListener('DOMContentLoaded', function () {
+            // 是否需要切换黑夜模式
+            let isForceNightTheme = window.location.search.indexOf('theme=night') !== -1
+                || window.localStorage.getItem('edeity-theme_theme') === 'night';
+            let isForceLightTheme = window.location.search.indexOf('theme=light') !== -1
+                || window.localStorage.getItem('edeity-theme_theme') === 'light';
+            let hours = new Date().getHours();
+            hours = 22;
+            var html = document.querySelector('html')
+            if (isForceNightTheme) {
+                html.classList.add('night');
+            } else if (isForceLightTheme) {
+                html.classList.remove('night');
+            } else {
+                // 没有强制开关，用时间计算
+                if (hours < 8 || hours >= 20) {
+                    html.classList.add('night');
+                } else {
+                    html.classList.remove('night');
+                }
+            }
+            // 是否需要隐藏左侧导航栏
+            if (document.querySelector('ol.toc') !== null) {
+                var bar = document.querySelector('#nav-bar')
+                bar.style.cssText = 'display: block'
+            }
+        });</script><meta name="generator" content="Hexo 5.0.0"></head><body><div class="loading"></div><div id="switch" data-switch="{&#34;toc&#34;:true,&#34;use_pwa&#34;:false}"></div><header class="fullscreen"><div class="toolbar"><i class="iconfont icon-menu"></i></div><h1><a href="/">Edeity&#39;s Blog</a></h1><div class="head-link"><a class="btn waves" href="/"><span><i class="iconfont icon-home">Home </i></span></a><a class="btn waves" href="/about/index.html"><span><i class="iconfont icon-me">About </i></span></a><a class="btn waves" target="_blank" rel="noopener" href="https://github.com/edeity"><span><i class="iconfont icon-github">Github</i></span></a></div></header><div class="some-link"><a class="btn" id="light-or-not"><i class="iconfont icon-light"></i> </a><a style="display:none" class="btn" id="up-to-top"><i class="iconfont icon-up"></i></a></div><div id="nav-bar" style="display:none"><div class="toc"></div></div><main id="content-main" class="section"><div class="list-item"><h1 class="post-title"><a id="财务合并前端文档" class="article-link" href="">财务合并前端文档</a></h1><div class="post-meta"><time class="meta published">Dec 30, 2017</time></div><div class="article"><div class="post-excerpt markdown-body"><p>在过去将近一年的开发中，虽对平台主张的前端框架（<a target="_blank" rel="noopener" href="http://docs.tinper.org/moy/kero-api.html">kero</a> + <a target="_blank" rel="noopener" href="http://docs.tinper.org/neoui/">neoui</a> + jquery）持反对意见，但因对自我产出的代码有着不可描述的情感，希望在该技术框架下所产出的<code>业务组件</code>以及<code>业务模块代码</code>有落脚之处，利用工作之余，产出以下说明文档，并迁移至<code>kancloud</code>中。若有疑问，可在博客或kancloud中留言，也欢迎补充。</p><ul><li><a target="_blank" rel="noopener" href="https://www.kancloud.cn/edeity/iuap-desgin-preview/468917">BCS维护或开发文档地址</a></li></ul><p>虽别离，希望，所有人，所有事，都越来越好。</p><div id="comment"></div></div></div></div><div class="more section"><div class="pre"><a class="article-link" href="/bye_2017_and_hi_2018.html"><i class="iconfont icon-right"></i> <span>Bye 2017, Hi 2018</span></a></div><div class="next"><a class="article-link" href="/fe_app_with_mac.html">MAC之前端常用APP 和 技巧 <i class="iconfont icon-right"></i></a></div></div></main></body><footer class="section fullscreen"><div class="footer-desc">Edeity © 2015-2019 · powered by hexo</div></footer><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script src="/public/js/init.js"></script></html>
